@@ -21,6 +21,10 @@
 .flex-grid {
   display: flex;
   flex-flow: row wrap;
+  margin-left: 18rem;
+  margin-right: 18rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .title-category {
@@ -33,7 +37,7 @@
 
 .box-item {
   flex: 1 0 $itemMinWidth;
-  margin: 0 0 rem(30px);
+  margin: rem(10px) 0 rem(30px);
   display: inline-block;
   min-height: rem(285px);
   transition: all 0.3s;
@@ -46,16 +50,17 @@
 
   // Note 1: This complex calc right here is what makes the leftover box items
   // have the same width than their siblings.
+
   @for $n from 2 through $maxItemsPerRow {
     $resolution: (2 * $rowMargin) + ($n * $itemMinWidth);
     @include media(">=#{$resolution}") {
-      max-width: calc(100%/#{$n} - #{$itemMargin * 2});
+      max-width: calc(100% /#{$n} - #{$itemMargin * 2});
     }
   }
 
   // Note 2: This sets the maximum number of box items per row.
   @include media(">=#{(2 * $rowMargin) + ($maxItemsPerRow * $itemMinWidth)}") {
-    flex: 1 0 calc(100%/#{$maxItemsPerRow} - #{$itemMargin * 2});
+    flex: 1 0 calc(100% /#{$maxItemsPerRow} - #{$itemMargin * 2});
   }
 
   &:hover {
@@ -215,4 +220,56 @@
   .box-info {
     padding: rem(15px);
   }
+}
+
+#customMainHeader {
+  width: 100vw;
+  height: rem(300px);
+  background-color: $primaryDark;
+  padding-top: 7rem;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.customMainLogo {
+  font-size: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+
+.customMainMenu {
+  background-color: $primaryDark;
+  display: flex;
+  color: #fff;
+}
+
+.customMainArticle {
+  display: flex;
+  width: 100vw;
+}
+
+.button-list {
+  list-style-type: none; /* 기본 목록 스타일 제거 */
+  padding: 0; /* 패딩 제거 */
+  display: flex; /* Flexbox를 사용하여 수평 정렬 */
+}
+
+.button-list li {
+  margin-right: 15px; /* 각 버튼 사이의 간격 */
+}
+
+.button-list button {
+  color: white; /* 글자 색상 */
+  background-color: $primaryDark;
+  border: none; /* 테두리 제거 */
+  padding: 10px 15px; /* 패딩 조정 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 마우스 커서가 포인터로 변경 */
+  transition: background-color 0.3s; /* 호버 효과를 위한 트랜지션 */
+}
+
+.button-list button:hover {
+  background-color: rgb(44, 41, 41); /* 호버 시 배경 색상 변경 */
 }

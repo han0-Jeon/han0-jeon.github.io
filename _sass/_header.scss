@@ -6,100 +6,36 @@ body {
 .bar-header {
   background-color: $primaryDark;
   padding: rem(10px) rem(15px);
-  position: fixed;
-  left: 0;
-  width: 100%;
+  position: fixed; /* 고정 위치 */
+  left: 0; /* 화면의 왼쪽 끝에 고정 */
+  top: 0; /* 상단에 위치 */
+  width: 60px; /* 너비 조정 (필요에 따라 조정) */
+  height: 100vh; /* 전체 높이를 차지 */
   z-index: 10;
   transition: top 0.5s, left 0.3s ease, background-color 0.5s, box-shadow 0.5s;
-  
-  @include media(">=sm") {
-    padding: rem(15px) rem(0px);
-  }
 
-  .logo {
-    display: inline-block;
-    margin: 0;
-    height: rem(32px);
-    line-height: rem(32px);
-
-    a {
-      display: block;
-      color: $accentDark;
-      text-decoration: none;
-      font-size: rem(32px);
-      position: relative;
-      outline: 0;
-    }
-
-    svg {
-      width: rem(120px);
-      height: rem(30px);
-      transition: all .4s;
-  
-      @include media(">=sm") {
-        width: rem(205px);
-      }
-    }
-  }
-
-  .version {
-    color: $accentDark;
-    font-size: rem(10px);
-    font-weight: normal;
-    line-height: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    transform: translateX(110%);
-    opacity: 0.3;
-  }
-
-  .icon-menu {
-    float: left;
-    cursor: pointer;
-    margin: rem(5px) rem(20px) rem(5px) 0;
-    width: rem(20px);
-    height: rem(20px);
-    fill: $accentDark;
-
-    @include media(">=sm") {
-      margin: rem(5px) rem(20px) rem(5px) rem(25px);
-    }
-  }
-
-  .dosearch {
-    float: right;
-    width: rem(30px);
-    height: rem(30px);
-    cursor: pointer;
-    margin: 0;
-    @include media(">=sm") {
-      margin: 0 rem(20px) 0 0;
-    }
-  }
-
-  .icon-search {
-    width: rem(20px);
-    height: rem(20px);
-    fill: $accentDark;
-    margin: rem(5px);
-  }
-
+  /* logo와 검색 아이콘은 숨김 */
+  .logo,
+  .dosearch,
   .get-theme {
     display: none;
-    font-size: rem(13px);
-    font-weight: bold;
-    text-decoration: none;
-    background-color: $themeColor;
-    color: $accentDark;
-    padding: rem(5px) rem(10px);
-    border-radius: rem(5px);
-    float: right;
-    margin: rem(5px) rem(15px) rem(5px) rem(5px);
+  }
 
-    @include media(">=sm") {
-      display: inline-block;
+  /* icon-menu 스타일 */
+  .icon-menu {
+    position: absolute; /* 절대 위치 설정 */
+    top: 10%; /* 상단에서 30% 위치 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    left: 50%;
+    float: left;
+    cursor: pointer;
+    width: rem(30px);
+    height: rem(30px);
+    fill: $accentDark;
+    padding: rem(5px);
+    &:hover {
+      border: 1px solid gray; /* hover 시 흰색 테두리 */
+      border-radius: 2px;
     }
   }
 }
@@ -108,7 +44,7 @@ body.main-page {
   background-color: #141414;
 
   .bar-header {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(44, 41, 41, 1);
   }
 }
 

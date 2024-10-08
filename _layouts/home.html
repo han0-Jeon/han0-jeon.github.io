@@ -14,6 +14,19 @@ site.show_hero and paginator == nil or paginator.page == 1 %} {% assign offset =
 >
   <!-- Posts -->
   <section id="grid" class="row flex-grid">
+    <header id="customMainHeader">
+      <div>
+        <a class="customMainLogo" title="My Blog" href="/">My BLOG</a>
+      </div>
+      <div class="customMainMenu">
+        <ul class="button-list">
+          <li><button>Cate 01</button></li>
+          <li><button>Cate 02</button></li>
+          <li><button>Cate 03</button></li>
+        </ul>
+      </div>
+    </header>
+
     {% for post in posts offset: offset %}
     <article class="box-item">
       <span class="category">

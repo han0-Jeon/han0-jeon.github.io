@@ -10,7 +10,7 @@ $texts: map-get($theme, texts) !default;
 
 // Breakpoints
 $breakpoints: (
-  sm: 37.5rem
+  sm: 37.5rem,
 );
 
 // Margins
@@ -18,7 +18,7 @@ $rowMargin: 10px;
 $itemMargin: 15px;
 
 // Sizes
-$itemMinWidth: 300px;
+$itemMinWidth: 400px;
 
 // Settings
 $maxItemsPerRow: 6;
