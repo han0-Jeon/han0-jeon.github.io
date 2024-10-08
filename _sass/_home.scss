@@ -21,12 +21,14 @@
 .flex-grid {
   display: flex;
   flex-flow: row wrap;
-  margin-left: 18rem;
-  margin-right: 18rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0 15rem; /* 양쪽 공백 추가 */
 }
 
+@media (max-width: 768px) {
+  .flex-grid {
+    padding: 0 10px; /* 공백 제거 */
+  }
+}
 .title-category {
   font-size: rem(32px);
   margin: 0 0 rem(40px);

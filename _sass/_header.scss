@@ -4,7 +4,7 @@ body {
 }
 
 .bar-header {
-  background-color: $primaryDark;
+  background-color: none;
   padding: rem(10px) rem(15px);
   position: fixed; /* 고정 위치 */
   left: 0; /* 화면의 왼쪽 끝에 고정 */
@@ -24,13 +24,12 @@ body {
   /* icon-menu 스타일 */
   .icon-menu {
     position: absolute; /* 절대 위치 설정 */
-    top: 10%; /* 상단에서 30% 위치 */
     transform: translateX(-50%); /* 수평 중앙 정렬 */
     left: 50%;
     float: left;
     cursor: pointer;
-    width: rem(30px);
-    height: rem(30px);
+    width: rem(40px);
+    height: rem(40px);
     fill: $accentDark;
     padding: rem(5px);
     &:hover {
@@ -44,14 +43,14 @@ body.main-page {
   background-color: #141414;
 
   .bar-header {
-    background-color: rgba(44, 41, 41, 1);
+    background-color: none;
   }
 }
 
 body.light:not(.main-page) {
   .bar-header {
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 0px 1px 1px rgba(247, 195, 195, 0.1);
+    background-color: none;
 
     .icon-search,
     .icon-menu {
